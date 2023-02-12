@@ -1,0 +1,60 @@
+*"ConfigFile"
+	"ConfigFile"	-- 变量存放文件
+
+"InitSymbol"{"Option"}<"Type":"Variable">_("Addition")"Others"
+	"InitSymbol"	-- 起始标志符，有效值如下：
+					-- &	隐藏项，该符号只允许存在一次
+							Hidden Items. Can be used for only once
+					-- # 	下级菜单项
+							Sub Items
+	"Option"		-- 选项名
+					   Option Name
+					-- 不能含有"}"符号
+					   Cannot contain "}"
+	<"Type":"Variable">		-- 如果整体为<>，表示该项为子菜单类型
+							-- <> means this line contains a sublist
+	"Type"			-- 类型，有效值如下：
+					-- SELECT	选择项
+					-- VALUE	SELECT项的各有效值
+								Valid Options For SELECT
+					-- NUMBER	输入数字型
+					-- STRING	输入字符串型
+					-- IMAGE	关联图像型
+					-- FILE		关联文件\程序型
+					-- FOLDER	关联文件夹型
+					-- COLOR	更改颜色型
+					-- BOOLEAN	布尔型，0为false，非0为true
+								bool type. 0 for false, other number for true.
+					-- HELP		帮助信息，点击选项后运行对应HELP函数以打开对应使用教程
+								Click to run the function and open the tutorial file accrodingly
+								对应函数：CMD_HELP.XXXXX () , XXXXX为"Variable"部分内容
+								function: CMD_HELP.XXXXX () , XXXXX is the string in "Variable"
+					-- TIP		温馨提示，仅展示文字用，点击无反应
+								Only to show tips. If clicked, nothing will happen
+	"Variable"		-- 变量名，SELECT与TIP类型下为空，VALUE类型下如果对应多个变量，此处留空
+					   Variable name. Empty when Type is SELECT or TIP.
+					   If Type is VALUE and if there are 2 or more variables to change, "Variables" is empty.
+	("Addition")	-- 附加属性，仅允许存在最多一个附加属性，格式如下，若无附加属性则为空，不留左右括号"()"
+					   Addition. Only one addition can be used, whose format is below.
+					   If none, empty it, without "(" and ")".
+		("Name":"Detail")
+			"Name"	-- LOCK		仅适用于SELECT和BOOLEAN，此时的"Detail"记录后续VALUE的"Option"
+								若设定，仅当该项的值为"Detail"所记述内容时显示同级下&开头的隐藏项
+								Only suit for SELECT and BOOLEAN. "Detail" should be "Option" of the VALUE item.
+								If set, only when the value of the item is equal to which written in "Detail", 
+									those hidden items(start by "&") below of the same level is shown.
+					-- FUNCTION	若设定，则获取该项信息、更改该项信息时会运行对应函数
+								If set, when getting value and writting value, a function is run instead.
+								对应函数：CMD_FUNC.XXXXX.SetValue () , CMD_FUNC.XXXXX.GetValue ()
+								Function: CMD_FUNC.XXXXX.SetValue () , CMD_FUNC.XXXXX.GetValue ()
+					-- LOG		记录该子菜单的位置，用于其他皮肤快速打开至对应位置时使用
+								Log the position of the sublist. Useful for other skins to open setting.
+					-- UNIT		单位。仅适用于NUMBER类型。展示对应项目的值时会在后面加上此单位
+								Only suit for NUMBER. When showing this item, the unit will be added after the value.
+	"Others"		-- 仅用于VALUE类型，格式如下
+					   Only suit for VALUE, the format is below
+		["Value01"]<"Variable01">|["Value02"]<"Variable02">|...
+					-- 如果VALUE的"Variable"项有填入，则格式为
+					   if "Variables" is not empty, then the format is
+		["Value"]<>
+

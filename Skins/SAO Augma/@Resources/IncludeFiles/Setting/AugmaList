@@ -1,0 +1,292 @@
+========
+*Setting.inc
+{常驻页面}<>_
+#{时间格式}<SELECT:>_
+##{24小时制}<VALUE:TimeFormat>_[%H]<>
+##{12小时制}<VALUE:TimeFormat>_[%I]<>
+#{隐藏网速信息}<BOOLEAN:TypeNet>_
+#{回收站提醒}<>_
+##{当文件数量超过多少时提醒}<NUMBER:RecycleMaxCount>_
+##{当文件大小超过多少时提醒}<NUMBER:RecycleMaxSize>_(FUNCTION:recycle)
+#{浏览器设置}<>_
+##{浏览器类型}<SELECT:>_(LOCK:其他)
+###{FireFox}<VALUE:>_[f269]<ExplorerIcon>|[255,70,70]<ExplorerColor>|[Firefox.exe]<ExplorerPath>
+###{Chrome}<VALUE:>_[f268]<ExplorerIcon>|[20,210,140]<ExplorerColor>|[Chrome.exe]<ExplorerPath>
+###{Microsoft Edge}<VALUE:>_[f282]<ExplorerIcon>|[0,120,215]<ExplorerColor>|[shell:Appsfolder\Microsoft.MicrosoftEdge_8wekyb3d8bbwe!MicrosoftEdge]<ExplorerPath>
+###{其他}<VALUE:>_[*f26b]<ExplorerIcon>|[*105,185,0]<ExplorerColor>|[*]<ExplorerPath>
+&##{高级设置}<>_
+###{浏览器图标}<SELECT:>_
+####{FireFox}<VALUE:ExplorerIcon>_[f269]<>
+####{Chrome}<VALUE:ExplorerIcon>_[f268]<>
+####{Microsoft Edge}<VALUE:ExplorerIcon>_[f282]<>
+####{Opera}<VALUE:ExplorerIcon>_[f26a]<>
+####{IE}<VALUE:ExplorerIcon>_[f26b]<>
+###{浏览器颜色}<COLOR:ExplorerColor>_
+###{浏览器地址}<FILE:ExplorerPath>_
+#{部件大小}<SELECT:>_
+##{中，适合1920x1080}<VALUE:ComponentSize>_[M]<>
+#{开启通知}<BOOLEAN:SendNotice>_
+{音乐播放器页面}<>_
+#{播放器类型}<SELECT:>_
+##{AIMP}<VALUE:>_[AIMP]<PlayerName>|[NowPlaying]<PlayerType>|[*AIMP]<PlayerLabel>
+##{foobar2000}<VALUE:>_[CAD]<PlayerName>|[NowPlaying]<PlayerType>|[*FOOBAR2000]<PlayerLabel>
+##{iTunes}<VALUE:>_[iTunes]<PlayerName>|[NowPlaying]<PlayerType>|[*ITUNES]<PlayerLabel>
+##{MediaMonkey}<VALUE:>_[MediaMonkey]<PlayerName>|[NowPlaying]<PlayerType>|[*MediaMonkey]<PlayerLabel>
+##{Winamp}<VALUE:>_[Winamp]<PlayerName>|[NowPlaying]<PlayerType>|[*WINAMP]<PlayerLabel>
+##{WindowsMediaPlayer}<VALUE:>_[WMP]<PlayerName>|[NowPlaying]<PlayerType>|[*WMP]<PlayerLabel>
+##{QQ音乐}<VALUE:>_[QQMusic]<PlayerName>|[MusicPlayer]<PlayerType>|[*QQMusic]<PlayerLabel>
+##{网易云音乐}<VALUE:>_[CloudMusic]<PlayerName>|[MusicPlayer]<PlayerType>|[*CloudMusic]<PlayerLabel>
+##{酷狗音乐}<VALUE:>_[KGMusic]<PlayerName>|[MusicPlayer]<PlayerType>|[*KGMusic]<PlayerLabel>
+##{酷我音乐盒}<VALUE:>_[KwMusic]<PlayerName>|[MusicPlayer]<PlayerType>|[*KwMusic]<PlayerLabel>
+##{虾米音乐}<VALUE:>_[XMusic]<PlayerName>|[MusicPlayer]<PlayerType>|[*XMusic]<PlayerLabel>
+##{百度音乐}<VALUE:>_[BaiduMusic]<PlayerName>|[MusicPlayer]<PlayerType>|[*BaiduMusic]<PlayerLabel>
+#{播放器地址}<FILE:PlayerPath>_
+#{播放器名称}<STRING:PlayerLabel>_
+#{播放器高级设置}<>_
+##{播放器类型}<STRING:PlayerName>_
+##{播放器接口}<SELECT:>_(LOCK:自定义)
+###{NowPlaying}<VALUE:PlayerType>_[NowPlaying]<>
+###{MusicPlayer}<VALUE:PlayerType>_[MusicPlayer]<>
+###{自定义}<VALUE:PlayerType>_[*]<>
+&##{自定义播放器接口}<STRING:PlayerType>_
+&##{帮助：如何自定义播放器接口}<HELP:WritePlayerFile>_
+#{播放器界面}<SELECT:>_
+##{简洁}<VALUE:TypeMusic>_[0]<>
+##{标准}<VALUE:TypeMusic>_[1]<>
+#{播放器背景壁纸}<IMAGE:OridinalWallpaper>_
+*Others\Visualizer.inc
+#{频谱设置}<>_
+##{音频采集设备}<STRING:AudioDeviceID>_
+##{频域点数}<SELECT:>_
+###{512}<VALUE:FFTSize>_[512]<>
+###{1024}<VALUE:FFTSize>_[1024]<>
+###{2048}<VALUE:FFTSize>_[2048]<>
+###{4096}<VALUE:FFTSize>_[4096]<>
+##{灵敏度}<NUMBER:Sensitivity>_
+##{谱线宽度}<NUMBER:BarWidth>_(FUNCTION:visualwidth)
+##{谱线间距}<NUMBER:BarGap>_(FUNCTION:visualgap)
+*Size.inc
+{图标大小与偏移}<>_
+#{常驻页面}<>_
+##{时间文字大小}<NUMBER:SizeTop_Time_F>_
+##{网速信息文字大小}<NUMBER:SizeBottom_Net_F1>_
+##{网速信息箭头大小}<NUMBER:SizeBottom_Net_F2>_
+##{启动按钮大小 (通常状态)}<NUMBER:SizeMain_F1>_
+##{启动按钮大小 (鼠标悬浮)}<NUMBER:SizeMain_F2>_
+##{启动按钮偏移 (纵向)}<NUMBER:SizeMain_Offset>_
+##{顶端按钮大小 (通常状态)}<NUMBER:SizeButton_F1>_
+##{顶端按钮大小 (鼠标悬浮)}<NUMBER:SizeButton_F2>_
+##{回收站按钮偏移 (横向)}<NUMBER:SizeRecycle_XOffset>_
+##{回收站按钮偏移 (纵向)}<NUMBER:SizeRecycle_YOffset>_
+##{菜单按钮偏移 (横向)}<NUMBER:SizeOption_XOffset>_
+##{菜单按钮偏移 (纵向)}<NUMBER:SizeOption_YOffset>_
+##{菜单文字大小}<NUMBER:SizeOption_MenuF>_
+##{后台模块图标大小}<NUMBER:SizeModule_F>_
+#{音乐播放器页面}<>_
+##{播放停止按钮大小}<NUMBER:SizePlayer_F1>_
+##{播放停止按钮偏移 (横向)}<NUMBER:SizePlayer_SXOffset>_
+##{播放停止按钮偏移 (纵向)}<NUMBER:SizePlayer_SYOffset>_
+##{快进按钮大小}<NUMBER:SizePlayer_F2>_
+##{快进按钮偏移 (横向)}<NUMBER:SizePlayer_LXOffset>_
+##{快进按钮偏移 (纵向)}<NUMBER:SizePlayer_LYOffset>_
+##{曲目文字大小}<NUMBER:SizePlayer_TextF>_
+#{部件加载页面}<>_
+##{图标大小 (通常状态)}<NUMBER:SizeCompo_F1>_
+##{图标大小 (鼠标悬浮)}<NUMBER:SizeCompo_F2>_
+#{挂机锁屏页面}<>_
+##{用户名文字大小}<NUMBER:SizeUser_F>_
+========
+*Setting.inc
+{Weather}<>_
+#{城市代码 (留空即自动获取)}<STRING:WeatherCode>_
+#{接口AppKey}<STRING:AppKey>_
+#{接口Sign}<STRING:Sign>_
+{Calendar}<>_
+#{月历样式}<SELECT:>_
+##{单月历}<VALUE:TypeCalendar>_[Single]<>
+##{双月历}<VALUE:TypeCalendar>_[Double]<>
+{Picture}<>_
+#{相册模式}<SELECT:>_
+##{展示单张图片}<VALUE:TypePicture>_[Picture]<>
+##{展示滚动相册}<VALUE:TypePicture>_[Album]<>
+#{图片地址 (单图模式)}<IMAGE:PicturePath>_
+#{相册地址 (相册模式)}<FOLDER:AlbumPath>_
+#{图片停留时间}<NUMBER:PictureStayTime>_(UNIT:秒)
+#{展示图片全貌}<BOOLEAN:PictureMode>_
+#{相册标题}<STRING:PictureTitle>_
+{System}<>_(LOG:System)
+#{采用的系统信息源}<SELECT:>_(LOCK:来自HWiNFO软件)
+##{来自Windows性能监视器}<VALUE:TypeSystem>_[Windows]<>
+##{来自HWiNFO软件}<VALUE:TypeSystem>_[HWiNFO]<>
+&#{HWiNFO设置}<>_(FUNCTION:hwinfo)
+*Others\System HWiNFO.inc
+##{CPU区域设置}<>_
+###{CPU使用率}<>_
+####{SensorId}<STRING:Sys_CPU_SensorId>_
+####{SensorInstance}<STRING:Sys_CPU_SensorInstance>_
+####{EntryID}<STRING:Sys_CPU_EntryID>_
+###{CPU温度}<>_
+####{SensorId}<STRING:Sys_CPUTemp_SensorId>_
+####{SensorInstance}<STRING:Sys_CPUTemp_SensorInstance>_
+####{EntryID}<STRING:Sys_CPUTemp_EntryID>_
+###{CPU区域显示项1}<>_
+####{SensorId}<STRING:Sys_CPUOpt1_SensorId>_
+####{SensorInstance}<STRING:Sys_CPUOpt1_SensorInstance>_
+####{EntryID}<STRING:Sys_CPUOpt1_EntryID>_
+####{项目名称}<STRING:Sys_CPUOpt1_Label>_
+####{数据单位}<STRING:Sys_CPUOpt1_Unit>_
+####{数据精度 (小数点后几位)}<STRING:Sys_CPUOpt1_Decimals>_
+###{CPU区域显示项2}<>_
+####{SensorId}<STRING:Sys_CPUOpt2_SensorId>_
+####{SensorInstance}<STRING:Sys_CPUOpt2_SensorInstance>_
+####{EntryID}<STRING:Sys_CPUOpt2_EntryID>_
+####{项目名称}<STRING:Sys_CPUOpt2_Label>_
+####{数据单位}<STRING:Sys_CPUOpt2_Unit>_
+####{数据精度 (小数点后几位)}<STRING:Sys_CPUOpt2_Decimals>_
+###{隐藏额外项目}<BOOLEAN:Sys_CPUOpt_IfDisabled>_(LOCK:false)
+&###{CPU区域显示项3}<>_
+####{SensorId}<STRING:Sys_CPUOpt3_SensorId>_
+####{SensorInstance}<STRING:Sys_CPUOpt3_SensorInstance>_
+####{EntryID}<STRING:Sys_CPUOpt3_EntryID>_
+####{项目名称}<STRING:Sys_CPUOpt3_Label>_
+####{数据单位}<STRING:Sys_CPUOpt3_Unit>_
+####{数据精度 (小数点后几位)}<STRING:Sys_CPUOpt3_Decimals>_
+&###{CPU区域显示项4}<>_
+####{SensorId}<STRING:Sys_CPUOpt4_SensorId>_
+####{SensorInstance}<STRING:Sys_CPUOpt4_SensorInstance>_
+####{EntryID}<STRING:Sys_CPUOpt4_EntryID>_
+####{项目名称}<STRING:Sys_CPUOpt4_Label>_
+####{数据单位}<STRING:Sys_CPUOpt4_Unit>_
+####{数据精度 (小数点后几位)}<STRING:Sys_CPUOpt4_Decimals>_
+##{GPU区域设置}<>_
+###{GPU使用率}<>_
+####{SensorId}<STRING:Sys_GPU_SensorId>_
+####{SensorInstance}<STRING:Sys_GPU_SensorInstance>_
+####{EntryID}<STRING:Sys_GPU_EntryID>_
+###{GPU温度}<>_
+####{SensorId}<STRING:Sys_GPUTemp_SensorId>_
+####{SensorInstance}<STRING:Sys_GPUTemp_SensorInstance>_
+####{EntryID}<STRING:Sys_GPUTemp_EntryID>_
+###{隐藏额外项目}<BOOLEAN:Sys_GPUOpt_IfDisabled>_(LOCK:false)
+&###{GPU区域显示项1}<>_
+####{SensorId}<STRING:Sys_GPUOpt1_SensorId>_
+####{SensorInstance}<STRING:Sys_GPUOpt1_SensorInstance>_
+####{EntryID}<STRING:Sys_GPUOpt1_EntryID>_
+####{项目名称}<STRING:Sys_GPUOpt1_Label>_
+####{数据单位}<STRING:Sys_GPUOpt1_Unit>_
+####{数据精度 (小数点后几位)}<STRING:Sys_GPUOpt1_Decimals>_
+&###{GPU区域显示项2}<>_
+####{SensorId}<STRING:Sys_GPUOpt2_SensorId>_
+####{SensorInstance}<STRING:Sys_GPUOpt2_SensorInstance>_
+####{EntryID}<STRING:Sys_GPUOpt2_EntryID>_
+####{项目名称}<STRING:Sys_GPUOpt2_Label>_
+####{数据单位}<STRING:Sys_GPUOpt2_Unit>_
+####{数据精度 (小数点后几位)}<STRING:Sys_GPUOpt2_Decimals>_
+##{RAM区域设置}<>_
+###{RAM使用率}<>_
+####{SensorId}<STRING:Sys_RAMUsage_SensorId>_
+####{SensorInstance}<STRING:Sys_RAMUsage_SensorInstance>_
+####{EntryID}<STRING:Sys_RAMUsage_EntryID>_
+###{RAM已用量}<>_
+####{SensorId}<STRING:Sys_RAMUsed_SensorId>_
+####{SensorInstance}<STRING:Sys_RAMUsed_SensorInstance>_
+####{EntryID}<STRING:Sys_RAMUsed_EntryID>_
+###{RAM空余量}<>_
+####{SensorId}<STRING:Sys_RAMFree_SensorId>_
+####{SensorInstance}<STRING:Sys_RAMFree_SensorInstance>_
+####{EntryID}<STRING:Sys_RAMFree_EntryID>_
+###{SWAP使用率}<>_
+####{SensorId}<STRING:Sys_SWAPUsage_SensorId>_
+####{SensorInstance}<STRING:Sys_SWAPUsage_SensorInstance>_
+####{EntryID}<STRING:Sys_SWAPUsage_EntryID>_
+###{SWAP已用量}<>_
+####{SensorId}<STRING:Sys_SWAPCommitted_SensorId>_
+####{SensorInstance}<STRING:Sys_SWAPCommitted_SensorInstance>_
+####{EntryID}<STRING:Sys_SWAPCommitted_EntryID>_
+###{SWAP空余量}<>_
+####{SensorId}<STRING:Sys_SWAPFree_SensorId>_
+####{SensorInstance}<STRING:Sys_SWAPFree_SensorInstance>_
+####{EntryID}<STRING:Sys_SWAPFree_EntryID>_
+##{帮助：如何配置HWiNFO}<HELP:ConfigHWiNFO>_
+##{打开HWiNFO配置程序}<HELP:OpenHWiNFOConfig>_
+&#{帮助：如何配置HWiNFO}<HELP:ConfigHWiNFO>_
+*Setting.inc
+#{部件标题}<STRING:SystemTitle>_
+{Folder View}<>_
+#{工作文件夹地址}<FOLDER:ViewPath>_
+#{筛选文件格式}<STRING:ViewExtensions>_
+{Schedule & Note}<>_
+#{默认显示项}<SELECT:>_
+##{显示当日日程}<VALUE:TypeSchedule>_[Schedule]<>
+##{显示备忘录}<VALUE:TypeSchedule>_[Note]<>
+#{日程页标题}<STRING:ScheduleTitle>_
+#{备忘页标题}<STRING:NoteTitle>_
+*Others\Sche&Alarm.inc
+#{关闭部件时默认隐藏到后台}<BOOLEAN:ScheduleHide>_
+#{关闭部件时弹出提醒}<BOOLEAN:ScheduleCloseRemind>_
+#{注意：添加日程与备忘请移步辅助功能版块}<TIP:>_
+*Setting.inc
+{Power}<>_
+#{用户名}<STRING:UserName>_
+#{用户头像}<IMAGE:UserPortrait>_
+*Size.inc
+#{用户名文字大小}<NUMBER:SizeUser_F>_
+========
+*Style.inc
+{配色模式}<SELECT:>_
+#{亮色模式}<VALUE:>_(FUNCTION:themecolor)[255,255,255]<ColorMain1>|[0,0,0]<ColorMain2>
+#{暗色模式}<VALUE:>_(FUNCTION:themecolor)[0,0,0]<ColorMain1>|[255,255,255]<ColorMain2>
+{描边颜色}<COLOR:ColorGlow>_
+{各部件颜色、透明度设置}<>_(LOG:CompoColor)
+#{Weather}<THEME:Weather>_
+#{Calendar}<THEME:Calendar>_
+#{Picture}<THEME:Picture>_
+#{System}<THEME:System>_
+#{Folder View}<THEME:FolderView>_
+#{Schedule & Note}<THEME:Schedule>_
+#{Power}<THEME:Power>_
+#{主快捷启动页面}<THEME:Launcher>_
+#{播放器页面}<THEME:Music>_
+#{Circle Launcher部件透明度}<NUMBER:AlphaCircle>_
+#{通知部件透明度}<NUMBER:AlphaNotice>_
+========
+*Launcher\Launcher.inc
+{主快捷启动页面设置}<>_(LOG:MainLauncher)
+#{显示搜索区域}<BOOLEAN:LauncherMode>_(LOCK:true)
+*Launcher\Search.inc
+&#{搜索项设置}<>_
+##{注意：搜索项名称不宜过长，以免显示不全}<TIP:>_
+##{搜索项01}<SEARCH:Search1>_
+##{搜索项02}<SEARCH:Search2>_
+##{搜索项03}<SEARCH:Search3>_
+##{搜索项04}<SEARCH:Search4>_
+##{搜索项05}<SEARCH:Search5>_
+##{搜索项06}<SEARCH:Search6>_
+##{搜索项07}<SEARCH:Search7>_
+##{搜索项08}<SEARCH:Search8>_
+##{搜索项09}<SEARCH:Search9>_
+##{搜索项10}<SEARCH:Search10>_
+##{搜索项11}<SEARCH:Search11>_
+##{搜索项12}<SEARCH:Search12>_
+##{搜索项13}<SEARCH:Search13>_
+##{搜索项14}<SEARCH:Search14>_
+##{搜索项15}<SEARCH:Search15>_
+##{搜索项16}<SEARCH:Search16>_
+#{应用程序设置}<>_
+##{分组1}<LAUNCHER:Group1>_
+##{分组2}<LAUNCHER:Group2>_
+##{分组3}<LAUNCHER:Group3>_
+##{分组4}<LAUNCHER:Group4>_
+{其他部件应用程序设置}<>_
+#{Circle Launcher}<LAUNCHER:Circle>_
+========
+*Setting.inc
+{闹钟}<>_
+#{启用闹钟}<BOOLEAN:UseAlarm>_(LOCK:true)
+*Others\Sche&Alarm.inc
+&#{闹钟铃声}<FILE:AlarmAudio>_
+&#{闹钟持续时间}<NUMBER:AlarmStayTime>_(UNIT:分钟)
+&#{超过持续时间后自动关闭闹钟通知}<BOOLEAN:AlarmAutoDelNotice>_
+&#{添加与修改闹钟}<OTHER:Alarm>_
+{日程与备忘}<OTHER:Schedule>_
+
