@@ -115,3 +115,15 @@ MeterStyle=StyleBlock
 [MeterC16]
 Meter=STRING
 MeterStyle=StyleItem
+[MeterB17]
+Meter=IMAGE
+MeterStyle=StyleBlock
+[MeterC17]
+Meter=STRING
+MeterStyle=StyleItem
+[MeterB18]
+Meter=IMAGE
+MeterStyle=StyleBlock
+[MeterC18]
+Meter=STRING
+MeterStyle=StyleItem
